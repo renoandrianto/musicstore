@@ -1,2 +1,5 @@
 node_modules
 Project_3322_final_5.pdf
+npm-debug.log
+.DS_Store
+/*.env
