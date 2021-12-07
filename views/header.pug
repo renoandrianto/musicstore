@@ -1,0 +1,31 @@
+header 
+    a(href="/") 
+        h1#heading-title  Allegro!
+    #searchfield
+        input(type="text" placeholder="Keyword(s)" name="search" id="search" class="commonsearch") 
+        //- input(type="submit" value="Search")
+        button(class="submitbutton" id="search-button") Search
+    #othersearchfield
+        form#other-search-form(action="/search" method="post")
+            input(type="text" placeholder="Keyword(s)" name="search" id="other-search-bar" class="commonsearch") 
+            //- input(type="submit" value="Search")
+            input(class="submitbutton" type="submit" id="other-search-button" value="Search") 
+    nav  
+        a(href="/login" id="sign-in" style="display: none;") Sign In 
+        a(href="/register" id="register" style="display: none;") Register 
+        a(href="/login?action=Logout" id="log-out" style="display: none;") Log Out
+        #cart-icon-container
+            a(href="/cart" id="cart") Cart
+            p#countCart  0
+    script.
+        let cartCount = 0;
+        console.log("Header rendered");
+        $.get("/cart/total", function(data) {
+            console.log(data.msg);
+            for(let item of data.msg) {
+                cartCount += item.Quantity;
+            }
+            $("#countCart").text(cartCount);
+        });
+
+

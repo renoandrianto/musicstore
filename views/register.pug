@@ -1,0 +1,25 @@
+extends layout
+block script 
+  script(src='/javascripts/externalJS.js')
+block content
+    include header
+    .form-container
+      form(name="register" action="/register" onsubmit="return validateForm('register')" required method="post")
+          h2 Allegro Music Store - Register 
+          input(type="text" id="username" name="username" placeholder="Desired Username") 
+          br
+          input(type="password" id="password" name="password" placeholder="Desired Password")
+          br
+          #submitcreate
+            input(type="submit" value="Confirm" class="submitbutton")
+            a.linkbutton(href="/")  Back
+    script.
+      const login = `#{login}`
+      document.getElementById("othersearchfield").style.display = "block";
+      if(login) {
+        document.getElementById("log-out").style.display = "block";
+      } else {
+          document.getElementById("sign-in").style.display = "block";
+          document.getElementById("register").style.display = "block";
+      }
+      

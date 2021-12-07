@@ -1,0 +1,31 @@
+//- extends layout
+
+//- block content
+//-   h1= title
+//-   p Welcome to #{title}
+
+extends layout
+block script 
+  script(src='/javascripts/loginsession.js')
+block content
+  include header
+  .form-container
+    form(name="login" action="/login" onsubmit="return validateForm('login')" required method="post")
+          h2 Allegro Music Store - Login
+          input(type="text" id="username" name="username" placeholder="Username") 
+          br
+          input(type="password" id="password" name="password" placeholder="Password")
+          br
+          #submitcreate
+            input(type="submit" value="Submit" class="submitbutton")
+            a.linkbutton(href="/register") Create
+  script.
+    const login = `#{login}`
+    console.log(login)
+    document.getElementById("othersearchfield").style.display = "block";
+    if(login) {
+        document.getElementById("log-out").style.display = "block";
+    } else {
+        document.getElementById("sign-in").style.display = "block";
+        document.getElementById("register").style.display = "block";
+    }

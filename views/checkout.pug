@@ -1,0 +1,65 @@
+extends layout
+block script 
+    script(src='/javascripts/checkoutpage.js')
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+block content
+    #checkout-page-container
+        #checkout-section-1 
+            #new-customer-header
+                h1 I'm a New Customer
+                h3 Please Checkout Below 
+            h2 or
+            #existing-customer-header
+            div 
+                h1 I'm Already a Customer
+                a.linkbutton(href="/login") Sign In 
+        #checkout-section-2  
+            form#checkoutaccount(action="/checkout" method="post" onsubmit="return validateCheckout()") 
+                #checkout-createaccount
+                    h1 Create Account: 
+                    label(for="username") Username  
+                    input(type="text" id="username-checkout" name="username" placeholder="Desired Username" onblur="checkUsername(this.value);" required) 
+                    span#username-existed
+                    br
+                    label(for="password") Password 
+                    input(type="password" id="password-checkout" name="password" placeholder="Desired Password" required)
+                br
+                h1 Delivery Address
+                label(for="fullname") Full Name 
+                input(type="text" id="fullname" name="fullname" placeholder="Required" required) 
+                br
+                label(for="companyname") Company Name
+                input(type="text" id="companyname" name="companyname" )
+                br
+                label(for="address1") Address Line 1
+                input(type="text" id="address1" name="address1" placeholder="Required" required)
+                br
+                label(for="address2") Address Line 2
+                input(type="text" id="address2" name="address2")
+                br
+                label(for="city") City 
+                input(type="text" id="city" name="city" placeholder="Required" required)
+                br
+                label(for="region") RegionState/District
+                input(type="text" id="region" name="region")
+                br
+                label(for="country") Country 
+                input(type="text" id="country" name="country" placeholder="Required" required)
+                br
+                label(for="postcode") Postcode/Zip Code
+                input(type="text" id="postcode" name="postcode" placeholder="Required" required)
+                br
+                p Your order: (<a href="/cart">change</a>)
+                b Free Standard Shipping
+                #checkout-items
+                b#checkout-price 
+                br
+                input(class="submitbutton" type="submit" value="Confirm")
+    script.
+        const data = `#{data}`
+        const login = `#{login}`
+        if (login) {
+            document.getElementById('checkout-section-1').remove();
+            document.getElementById('checkout-createaccount').remove();
+        }
+        

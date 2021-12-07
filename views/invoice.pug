@@ -1,0 +1,24 @@
+extends layout
+block script 
+    script(src='/javascripts/invoice.js')
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+block content
+    section#invoice-section
+        h1 Invoice
+        #invoice-main
+            #invoice-info
+            #invoice-items
+            b#invoice-price Total Price: HK$
+        footer#invoice-footer
+            p <b>Thanks for ordering. Your music will be delivered within 7 working days.</b>
+            a.linkbutton(href="/") OK 
+    
+
+
+    script.
+        let info = `#{info}`
+        const data = `#{data}`
+        const login = `#{login}`
+        //- console.log(info);
+        //- console.log(data);
+        //- console.log(login);

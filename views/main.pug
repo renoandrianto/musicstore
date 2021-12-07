@@ -1,0 +1,47 @@
+extends layout
+block script 
+  script(src='/javascripts/main.js')
+  //- script(src='/javascripts/loginsession.js')
+  //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+block content
+  include header
+  .mainrow 
+    aside 
+      h2 Category
+      ul#category-list 
+        //- li <a href="/classical">Classical</a>
+        //- li <a href="/baroque">Baroque</a>
+        //- li <a href="/romantic">Romantic</a>
+        //- li <a href="/late19th">Late 19th</a>
+      h3#welcome
+    main
+      a#home-link(href="..") Home 
+      span(id="homepath") > 
+        | <a id="category"></a> 
+      h1#title All Music 
+      #music-container
+        //- p= data
+
+  script.
+    const data = `#{data}`
+    const login = `#{login}`
+    const category = `#{category}`
+    let searchValue = `#{searchQuery}`
+    let queries = JSON.parse(data.replace(/&quot;/g,'"'));
+    console.log(category);
+    console.log(queries);
+    let categories = [...new Set(queries.map(item => item.Category))];
+    console.log(categories);
+    if(searchValue) {
+      searchValue = searchValue.split(" ");
+    }
+    console.log(category);
+    console.log(searchValue);
+    if(login) {
+        document.getElementById("log-out").style.display = "block";
+    } else {
+        document.getElementById("sign-in").style.display = "block";
+        document.getElementById("register").style.display = "block";
+    }
+
+      

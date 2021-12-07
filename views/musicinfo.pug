@@ -1,0 +1,41 @@
+extends layout
+block script 
+    script(src='/javascripts/musicinfo.js')
+    //- script(src='/javascripts/loginsession.js')
+block content
+    include header
+    section#music-info-container  
+        a(href="..") Home 
+        span(id="homepath") > 
+            | <a id="titlepath"></a> 
+        h1#musictitle
+        #music-info-inner
+            #img-audio
+                img#composerImg(src="", alt="")
+                audio#audio(controls autoplay)
+                    source#audiosource(src="" type="audio/mp3")
+            #music-info-description
+                p#composer 
+                p#published 
+                p#musiccategory 
+                p#description 
+                p#price 
+                #ordermusic 
+                    form(action="/cart" required method="post")
+                        label(for="quantity") Order: 
+                        input(type="number" name="quantity" min="1")
+                        input#userHidden(type="hidden" name="musicid")
+                        input(type="submit" value="Add to Cart")
+                        //- button#addcart Add to Cart
+
+    script.
+        const data = `#{data}`
+        const login = `#{login}`
+        document.getElementById("othersearchfield").style.display = "block";
+        if(login) {
+            document.getElementById("log-out").style.display = "block";
+            //- document.getElementById('userHidden').value = login;
+        } else {
+            document.getElementById("sign-in").style.display = "block";
+            document.getElementById("register").style.display = "block";
+        }

@@ -1,0 +1,24 @@
+extends layout
+block script 
+    script(src='/javascripts/shoppingcart.js')
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+block content
+    include header
+    section#cart-section
+        h1 My Shopping Cart
+        #cart-container
+        h3#finalprice
+        .cart-button-container 
+            a.linkbutton(href="/").back Back 
+            a.linkbutton(href="/checkout").checkout Checkout
+    script.
+        const data = `#{data}`
+        const login = `#{login}`
+        const category = `#{category}`
+        document.getElementById("othersearchfield").style.display = "block";
+        if(login) {
+            document.getElementById("log-out").style.display = "block";
+        } else {
+            document.getElementById("sign-in").style.display = "block";
+            document.getElementById("register").style.display = "block";
+        }
