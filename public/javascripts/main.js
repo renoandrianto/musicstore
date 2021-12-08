@@ -23,9 +23,9 @@ window.onload = () => {
             <a href="/info/${track.MusicId}"><h4>${track.MusicName}</h2></a>
             <div><img class="picture" src="../materials/img_${track.MusicId}.jpg" alt=""></div>
             <div id="card-details" class="container">
+            <p id="new-arrival">${track.NewArrival? "New Arrival!":""}</p>
             <p><b>Composer:</b> ${track.Composer}</p>
             <p><b>Price:</b> HK$ ${track.Price}</p>
-            <p id="new-arrival">${track.NewArrival? "New Arrival!":""}</p>
             </div>
             </div>`
         }
@@ -54,9 +54,9 @@ window.onload = () => {
                     <a href="/info/${track.MusicId}"><h4>${track.MusicName}</h2></a>
                     <div><img class="picture" src="../materials/img_${track.MusicId}.jpg" alt=""></div>
                     <div id="card-details" class="container">
+                    <p id="new-arrival">${track.NewArrival? "New Arrival!":""}</p>
                     <p><b>Composer:</b> ${track.Composer}</p>
                     <p><b>Price:</b> HK$ ${track.Price}</p>
-                    <p id="new-arrival">${track.NewArrival? "New Arrival!":""}</p>
                     </div>
                     </div>`;
                     break;

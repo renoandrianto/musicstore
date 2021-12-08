@@ -19,7 +19,6 @@ var userSchema = new db.Schema({
 });
 
 var cartSchema = new db.Schema({
-  // CartId: String,
   MusicId: String,
   UserId: String,
   Quantity: Number,
