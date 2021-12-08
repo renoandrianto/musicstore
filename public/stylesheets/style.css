@@ -7,22 +7,28 @@ body {
   padding: 0;
   margin: 0;
   background-color: #eeeeee;
+  /* height: 100vh; */
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
 }
 
 body.loginbg {
-  background-image: url("../materials/loginbg.jpeg");
+  /* background-image: url("../materials/loginbg.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  height: 100vh;
+  background: url(../materials/loginbg.jpeg) no-repeat center center / cover;
 }
 
 body.registerbg {
-  background-image: url("../materials/registerbg.jpeg"); 
+  /* background-image: url("../materials/registerbg.jpeg"); 
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  height: 100vh;
+  background: url(../materials/registerbg.jpeg) no-repeat center center / cover;
 }
 
 header {
+  width: 100%;
   padding: 50px 20px;
   height: 120px;
   /* width: 10; */
@@ -63,6 +69,10 @@ header #search-button, header #other-search-button {
   background:#e27714;
   border: 5px solid #e27714;
   color: #fefefe;
+}
+
+#check{
+  display: none;
 }
 
 nav {
@@ -112,7 +122,7 @@ aside {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: auto;
   top: 120px;
   bottom: 0;
 }
@@ -131,18 +141,28 @@ aside ul {
   /* margin-top: 100px; */
 }
 
-aside li{
-  padding-left: 45px;
-  padding-right: 45px;
+aside ul li{
+  /* padding-left: 45px; */
+  /* padding-right: 45px; */
   /* height: 50px; */
-  padding: 20px;
+  /* padding: 20px; */
   border-bottom: 1px solid black;
+
+  /* padding-left: 45px; */
+  /* padding-right: 45px; */
+}
+
+aside li a:hover {
+  background-color: #151515;
+  color: #eeeeee;
+  transition: all 0.25s;
 }
 
 aside li a{
-  /* padding: 20px; */
+  padding: 20px;
   color: black;
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  display: block;
 }
 
 main {
@@ -169,6 +189,7 @@ main #music-container .card {
 
 main #music-container .card h4{
   height: 70px;
+  margin-bottom: 0;
 }
 
 main #music-container .card div {
@@ -222,6 +243,10 @@ main #music-container .card #new-arrival {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+#music-info-container a {
+  text-decoration: underline;
+}
+
 #music-info-container #img-audio {
   border: 5px solid #ef9c42;
 }
@@ -255,8 +280,9 @@ main #music-container .card #new-arrival {
   transform: translateX(-50%);
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
   background-color: white;
-  height: 500px;
-  width: 700px;
+  height: 400px;
+  width: 80%;
+  max-width: 700px;
   border-radius: 30px;
 }
 
@@ -270,7 +296,8 @@ main #music-container .card #new-arrival {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px;
+  max-width: 500px;
+  width:80%;
   height: 40px;
 }
 
@@ -282,7 +309,7 @@ main #music-container .card #new-arrival {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 70px);
-  width: 500px;
+  max-width: 500px;
   display: flex;
   /* justify-content: space-around; */
 }
@@ -320,6 +347,15 @@ main #music-container .card #new-arrival {
   background-color: white;
   padding: 20px;
   margin-bottom: 20px
+}
+
+.cart-entry button {
+  height: 30px;
+  width: 100px;
+  background-color: #fc4343;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border: #151515;
+  cursor: pointer;
 }
 
 .cart-button-container a {
@@ -378,4 +414,138 @@ main #music-container .card #new-arrival {
 
 #invoice-info p{
   margin-right: 30px;
+}
+
+.checkbtn, #home-icon {
+  display: none;
+  width: 40px;
+}
+
+#hamburger {
+  width: 40px;
+}
+
+#home-link, #category {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1140px) {
+  aside {
+    /* display: none; */
+    top: 165px;
+  }
+
+  main {
+    /* width: 80%; */
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  header a h1{
+    display: none;
+  }
+
+  #music-info-container #music-info-inner {
+    /* margin: 30px; */
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  #music-info-container #music-info-inner #music-info-description {
+    margin-left: 0;
+  }
+
+  nav {
+    position: fixed;
+    z-index: 99;
+    top: 120px;
+    width: 100%;
+    /* display: inline-block; */
+    background-color: #ef9c42;
+    margin: 0;
+    left: 0;
+    text-align: center;
+    justify-content: space-around;
+    height: 45px;
+  }
+
+  nav a {
+    padding: 15px 20px;
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  #cart-icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  header #searchfield, #othersearchfield {
+  width: 80%;
+  }
+
+  main {
+    margin-top: 75px;
+  }
+  
+  nav #cart-icon-container p {
+    background-color: #ef9c42;
+    transform: translateX(-20%);
+    bottom: 15px;
+  }
+
+  aside {
+    /* display: none; */
+    left: -100%;
+    transition: all .5s;
+  }
+
+  #check:checked ~ aside {
+    left: 0;
+  }
+
+  .checkbtn, #home-icon {
+    display: block;
+  }
+
+  .form-container {
+    margin-top: 45px;
+  }
+
+  .form-container h2 {
+    margin: 40px;
+    font-size: 20px;
+  }
+
+  #cart-section, #music-info-container  {
+    margin-top: 75px;
+  }
+
+  /* body.loginbg {
+
+  }
+  
+  body.registerbg {
+
+  } */
+}
+
+@media (max-width: 480px) {
+  #img-audio #composerImg {
+    width: 100%;
+  } 
+
+  #checkout-page-container #checkout-section-1 h2{
+    order: 2;
+  }
+
+  #existing-customer-header {
+    order: 1;
+  }
+
+  #new-customer-header {
+    order: 3;
+  }
+
 }

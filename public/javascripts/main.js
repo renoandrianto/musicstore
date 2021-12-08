@@ -1,25 +1,11 @@
 var categoryString;
+// var x = window.matchMedia("(max-width: 1140px)")
 window.onload = () => {
+    // showCategory();
     console.log(categories);
     for(let category of categories) {
         document.getElementById("category-list").innerHTML += `<li><a href="/${category}">${category}</a></li>`
     }
-    // switch(category) {
-    //     case 'classical':
-    //         categoryString = "Classical";
-    //         break;
-    //     case 'baroque':
-    //         categoryString = "Baroque";
-    //         break;
-    //     case 'romantic':
-    //         categoryString = "Romantic";
-    //         break;
-    //     case 'late19th':
-    //         categoryString = "Late 19th";
-    //         break;
-    //     default:
-    //         console.log("Category not defined");
-    // }
     if(category) {
         categoryLink = document.getElementById('category');
         document.getElementById('homepath').style.display = "inline"
@@ -46,8 +32,11 @@ window.onload = () => {
             </div>`
         }
     }
+    let bar = document.getElementById('search');
     if(searchValue) {
         search(searchValue);
+        // console.log(searchValue);
+        bar.value = searchString;
     }
     let searchButton = document.getElementById("search-button");
     function search(searchValue) {
@@ -78,10 +67,30 @@ window.onload = () => {
         }
     }
     searchButton.addEventListener('click', () => {
-        let bar = document.getElementById('search');
         searchValue = bar.value.split(" ");
         search(searchValue);
     });
   }
+// function slideCategory(checkbox) {
+//     if(checkbox.checked) {
+//         document.getElementById("myAside").style.left = "0";
+//     } else{
+//         document.getElementById("myAside").style.left = "-100%";
+//     }
+// }
 
-  
+// var x = window.matchMedia("(max-width: 1140px)")
+// x.addEventListener("change", showCategory);
+
+// function showCategory() {
+//     console.log("BER")
+//     let checkbox = document.getElementById("check");
+//     if($(document).width() <= 1140) {
+//         checkbox.checked = false;
+//         console.log("ilang");
+//     } else {
+//         checkbox.checked = true;
+//     }
+//     slideCategory(checkbox);
+//     console.log("media change");
+// }

@@ -1,9 +1,3 @@
-window.onload = () => {
-    // document.body.style.backgroundImage= "url('materials/loginbg.jpeg')";
-    document.body.classList.add("loginbg");
-}
-
-
 function validateForm(form) {
     console.log(form)
     var user = document.forms[form]["username"].value;
@@ -12,4 +6,11 @@ function validateForm(form) {
         alert("Please do not leave the fields empty!");
         return false;
     } 
+}
+
+window.onload = () => {
+    // document.body.style.backgroundImage= "url('materials/loginbg.jpeg')";
+    document.body.classList.add("loginbg");
+    $(".checkbtn").remove();
+    $("#home-link-icon").prepend('<img id=home-icon src="../materials/home.png", alt="">');
 }

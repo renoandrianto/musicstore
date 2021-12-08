@@ -58,7 +58,7 @@ router.get('/checkusername/:id', function(req, res, next) {
   });
 });
 
-router.post('/search', function(req, res, next) {
+router.post('/', function(req, res, next) {
   console.log(req.body);
   // let searchValue = req.body["search"].split(" ");
   // console.log(searchValue);

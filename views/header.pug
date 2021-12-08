@@ -1,12 +1,15 @@
 header 
-    a(href="/") 
+    label(for="check" class="checkbtn")
+        img#hamburger(src="../materials/hamburger.png" alt="")
+    a#home-link-icon(href="/") 
+        //- img#home-icon(src="/materials/home.png", alt="")
         h1#heading-title  Allegro!
     #searchfield
         input(type="text" placeholder="Keyword(s)" name="search" id="search" class="commonsearch") 
         //- input(type="submit" value="Search")
         button(class="submitbutton" id="search-button") Search
     #othersearchfield
-        form#other-search-form(action="/search" method="post")
+        form#other-search-form(action="/" method="post")
             input(type="text" placeholder="Keyword(s)" name="search" id="other-search-bar" class="commonsearch") 
             //- input(type="submit" value="Search")
             input(class="submitbutton" type="submit" id="other-search-button" value="Search") 

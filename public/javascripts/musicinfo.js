@@ -1,4 +1,6 @@
 window.onload = () => {
+    $(".checkbtn").remove();
+    $("#home-link-icon").prepend('<img id=home-icon src="../materials/home.png", alt="">');
     console.log(login);
     // if(login) {
     //     document.getElementById("log-out").style.display = "block";

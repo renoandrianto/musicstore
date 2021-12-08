@@ -6,7 +6,8 @@ block script
 block content
   include header
   .mainrow 
-    aside 
+    input(type="checkbox" id="check")
+    aside#myAside 
       h2 Category
       ul#category-list 
         //- li <a href="/classical">Classical</a>
@@ -26,14 +27,13 @@ block content
     const data = `#{data}`
     const login = `#{login}`
     const category = `#{category}`
-    let searchValue = `#{searchQuery}`
+    let searchString = `#{searchQuery}`
+    let searchValue;
     let queries = JSON.parse(data.replace(/&quot;/g,'"'));
-    console.log(category);
-    console.log(queries);
     let categories = [...new Set(queries.map(item => item.Category))];
     console.log(categories);
-    if(searchValue) {
-      searchValue = searchValue.split(" ");
+    if(searchString) {
+      searchValue = searchString.split(" ");
     }
     console.log(category);
     console.log(searchValue);

@@ -1,6 +1,8 @@
 let queries;
 let price;
 window.onload = () => {
+    $(".checkbtn").remove();
+    $("#home-link-icon").prepend('<img id=home-icon src="../materials/home.png", alt="">');
     console.log("Cart loaded");
     // console.log(data);
     if(data) {
