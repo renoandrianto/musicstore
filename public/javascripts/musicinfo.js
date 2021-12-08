@@ -2,12 +2,6 @@ window.onload = () => {
     $(".checkbtn").remove();
     $("#home-link-icon").prepend('<img id=home-icon src="../materials/home.png", alt="">');
     console.log(login);
-    // if(login) {
-    //     document.getElementById("log-out").style.display = "block";
-    // } else {
-    //     document.getElementById("sign-in").style.display = "block";
-    //     document.getElementById("register").style.display = "block";
-    // }
     let queries = JSON.parse(data.replace(/&quot;/g,'"'));
     console.log(queries);
     document.getElementById('homepath').style.display = "inline";
@@ -24,5 +18,4 @@ window.onload = () => {
     document.getElementById('musiccategory').innerHTML = "<b>Category: </b>" + queries[0].Category;
     document.getElementById('description').innerHTML = "<b>Description: </b>" + queries[0].Description;
     document.getElementById('price').innerHTML = "<b>Price: </b>$" + queries[0].Price;
-    // document.getElementById('music-container').innerHTML +=
 }

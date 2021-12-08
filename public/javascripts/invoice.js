@@ -2,14 +2,6 @@ let queries;
 let price = 0;
 let userexist;
 window.onload = () => {
-    // $("#invoice-info").html(
-    //     `<p><b>Full Name:</b> ${"Reno"}       <b>Company:</b> ${"NA"}</p>
-    //     <p><b>Address Line 1:</b> ${"Reno"}</p>
-    //     <p><b>Address Line 2:</b> ${"Reno"}</p>
-    //     <p><b>City:</b> ${"Oxford"}   <b>Region:</b> ${"NA"}   <b>Country:</b> ${"UK"}</p>
-    //     <p><b>Postcode:</b> ${"Oxford"}</p>`
-        
-    // );
     if(data) {
         info = JSON.parse(info.replace(/&quot;/g,'"'));
         queries = JSON.parse(data.replace(/&quot;/g,'"'));

@@ -1,7 +1,5 @@
 var categoryString;
-// var x = window.matchMedia("(max-width: 1140px)")
 window.onload = () => {
-    // showCategory();
     console.log(categories);
     for(let category of categories) {
         document.getElementById("category-list").innerHTML += `<li><a href="/${category}">${category}</a></li>`

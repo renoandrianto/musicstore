@@ -9,7 +9,6 @@ function validateForm(form) {
 }
 
 window.onload = () => {
-    // document.body.style.backgroundImage = "url('materials/registerbg.jpeg')";
     document.body.classList.add("registerbg");
     $(".checkbtn").remove();
     $("#home-link-icon").prepend('<img id=home-icon src="../materials/home.png", alt="">');
